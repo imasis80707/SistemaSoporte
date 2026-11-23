@@ -1,0 +1,23 @@
+@model EtiquetaVm
+@{
+    ViewData["Title"] = Model.Nombre;
+}
+
+<a asp-action="Index" class="btn btn-sm btn-outline-secondary mb-3">Volver a la lista</a>
+
+<div class="card">
+    <div class="card-body">
+        <h1 class="h4 mb-3"><partial name="_InsigniaColor" model="Model" /></h1>
+
+        <dl class="row mb-0">
+            <dt class="col-sm-3">Id</dt>
+            <dd class="col-sm-9">@Model.Id</dd>
+
+            <dt class="col-sm-3">Nombre</dt>
+            <dd class="col-sm-9">@Model.Nombre</dd>
+
+            <dt class="col-sm-3">Color</dt>
+            <dd class="col-sm-9"><code>@Model.Color</code></dd>
+        </dl>
+    </div>
+</div>

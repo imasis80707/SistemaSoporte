@@ -13,5 +13,12 @@ namespace Web.Controllers
             var etiquetas = await _api.ListarAsync(ct);
             return View(etiquetas);
         }
+
+        public async Task<IActionResult> Detalle(int id, CancellationToken ct)
+        {
+            // ObtenerAsync devuelve null cuando el API responde 404: aquí se vuelve un 404 del MVC.
+            var etiqueta = await _api.ObtenerAsync(id, ct);
+            return etiqueta is null ? NotFound() : View(etiqueta);
+        }
     }
 }

@@ -1,0 +1,4 @@
+﻿@model EtiquetaVm
+@* Vista parcial: pinta una etiqueta con SU color. Se usa en Etiquetas/Index y en Etiquetas/Detalle.
+   A diferencia de _InsigniaEstado, el color no se decide aquí: viene en el dato (#rrggbb). *@
+<span class="badge" style="background-color:@Model.Color">@Model.Nombre</span>
