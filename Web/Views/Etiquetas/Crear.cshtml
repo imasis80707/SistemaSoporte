@@ -1,0 +1,22 @@
+@model EtiquetaCrearVm
+@{ ViewData["Title"] = "Nueva etiqueta"; }
+
+<h1 class="h3 mb-3">Nueva etiqueta</h1>
+
+<form method="post" asp-action="Crear">
+    @* Errores generales (los que no pertenecen a un campo), por ejemplo un 422 del API *@
+    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+    <div class="mb-3">
+        <label asp-for="Nombre" class="form-label"></label>
+        <input asp-for="Nombre" class="form-control" />
+        <span asp-validation-for="Nombre" class="text-danger"></span>
+    </div>
+    <div class="mb-3">
+        <label asp-for="Color" class="form-label"></label>
+        <input asp-for="Color" class="form-control" />
+        <span asp-validation-for="Color" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Crear</button>
+    <a asp-action="Index" class="btn btn-outline-secondary">Cancelar</a>
+</form>
